@@ -1,22 +1,22 @@
 @import "bootstrap";
 
 .footer {
-    color: white;
-    min-height:0px;
-    bottom:0;
-    width: 100%;
-    text-align: center;
-    position: fixed;
-    background-color: rgba($color: #0a73eb7c, $alpha: 1.0) ;
-    opacity: 80%;
-  }
+  color: white;
+  min-height:0px;
+  bottom:0;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  background-color: rgba($color: #0a73eb7c, $alpha: 1.0) ;
+  opacity: 80%;
+}
 
-  .jumbotron {
-      text-align: center;
-      position: relative;
-  }
+.jumbotron {
+  text-align: center;
+  position: relative;
+}
 
-  .background {
-    background-image:"homeimage1.jpg";
-    background-size: cover;
-  }
+.background {
+  background-image:url("homeimage1.jpg");
+  background-size: cover;
+}
