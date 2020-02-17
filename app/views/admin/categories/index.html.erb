@@ -4,7 +4,7 @@
         <p>You can create new category here!</p>
         <br>
     </div>
-    <div class="btn">
+    <div class="btn-3">
         <%= link_to "New Category", new_admin_category_path, class: "btn btn-primary" %>
     </div>
 
@@ -22,11 +22,13 @@
                 <td scope="row"><%= category.title %></td>
                 <td><%= category.description %></td>
                 <td><%= link_to "Delete",admin_category_path(category) , method: :delete , data: { confirm: "Are you sure"}  %>
-                    <%= link_to " Edit", edit_admin_category_path(category) %></td>
+                    <%= link_to "Edit", edit_admin_category_path(category) %>
+                    <%= link_to "Add", admin_category_path(category) %></td>
                 </tr>
             <% end %>
         </tbody>
     </table>
+
     <nav aria-label="Page navigation example">
   <ul class="pagination">
     <li class="page-item">
