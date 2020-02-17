@@ -40,10 +40,6 @@ class Admin::CategoriesController < ApplicationController
     redirect_to admin_categories_url
   end
 
-  def category_list
-    @category = Category.paginate(page: params[:page], per_page: 5)
-  end
-
   private
   def category_params
     params.require(:category).permit(:title, :description)
