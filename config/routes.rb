@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
   resources :categories
+  # 以下のコードでwordsをcategoriesとリンクさせている
+  resources :words
   end
 
 end

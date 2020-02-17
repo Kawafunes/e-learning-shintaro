@@ -1,0 +1,23 @@
+<div class="row-edit">
+    <div class="col-md-6 offset-md-3">
+    <h1>Change Category & Word</h1>
+        <%= form_for(:word, url: new_admin_word_path) do |f| %>
+            <br>
+            <%= f.label :word %>
+            <%= f.text_field :content, class: "form-control" %>
+            <br>
+            <%= f.label :choice %>
+            <%= f.text_field :content, class: "form-control" %>
+            <br>
+             <%= f.label :choice %>
+            <%= f.text_field :content, class: "form-control" %>
+            <br>
+             <%= f.label :choice %>
+            <%= f.text_field :content, class: "form-control" %>
+            <br>
+             <div class="btn-2">
+            <%= f.submit "Save Word", class: "btn btn-primary" %>
+            </div>
+        <% end %>
+    </div>
+</div>
