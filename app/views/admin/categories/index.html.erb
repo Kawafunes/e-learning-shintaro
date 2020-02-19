@@ -19,7 +19,7 @@
         <tbody>
             <% @categories.each do |category| %>
                 <tr>
-                <td scope="row"><%= category.title %></td>
+                <td scope="row"><%= link_to "#" , category.title %></td>
                 <td><%= category.description %></td>
                 <td><%= link_to "Delete",admin_category_path(category) , method: :delete , data: { confirm: "Are you sure"}  %>
                     <%= link_to "Edit", edit_admin_category_path(category) %>

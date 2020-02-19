@@ -8,5 +8,23 @@
         <div class="btn-2">
         <%= link_to "Add Word", new_admin_category_word_path(@category), class: "btn btn-primary" %>
         </div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Word</th>
+                    <th scope="col">Answer</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @words.each do |word| %>
+                    <tr>
+                    <td scope="row"><%= word.content %></td>
+                    <td><%= word.correct_answer %></td>
+                    <td><%= link_to "Delete",admin_category_word_path(@category, word) , method: :delete %>
+                        <%= link_to "Edit", edit_admin_category_word_path(@category, word) %> </td>
+                <% end %>
+            </tbody>
+        </table>
     </div>
 </div>
