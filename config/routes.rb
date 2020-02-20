@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/signup" , to: "users#new"
 
   resources :users
+  resources :categories
   root 'static_pages#home'
 
   get "/login", to: "sessions#new"

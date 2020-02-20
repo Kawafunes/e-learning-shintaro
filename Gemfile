@@ -62,5 +62,5 @@ gem 'font-awesome-rails'
 
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
-gem 'will_paginate'
-gem 'bootstrap-will_paginate'
+gem 'will_paginate', '~> 3.2', '>= 3.2.1'
+gem 'will_paginate-bootstrap4', '~> 0.2.2'
