@@ -8,7 +8,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><%= category.title %></h5>
                         <p class="card-text"><%= category.description %></p>
-                        <a href="#" class="btn btn-primary">Try to answer</a>
+                        <a href="#" class="btn btn-primary">Start Answer</a>
                     </div>
                 </div>
             </div>
@@ -17,20 +17,4 @@
     <div class="pagination">
         <%= will_paginate %>
     </div>
-</div>    
-<!-- <table class="table table-hover">
-        <thead>
-            <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @categories.each do |category| %>
-                <tr>
-                <td scope="row"><%= link_to "#" , category.title %></td>
-                <td><%= category.description %></td>
-                </tr>
-            <% end %>
-        </tbody>
-    </table>
+</div> 
