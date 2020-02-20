@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'answers/new'
   get 'sessions/new'
   get "/signup" , to: "users#new"
 
