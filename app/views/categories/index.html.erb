@@ -8,7 +8,8 @@
                     <div class="card-body">
                         <h5 class="card-title"><%= category.title %></h5>
                         <p class="card-text"><%= category.description %></p>
-                        <a href="#" class="btn btn-primary">Start Answer</a>
+                        <%# <a href="answers_new" class="btn btn-primary">Start Answer</a> %>
+                        <%= link_to "Start Answer", answers_new_url, class: "btn btn-primary" %>
                     </div>
                 </div>
             </div>
