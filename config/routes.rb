@@ -18,4 +18,8 @@ Rails.application.routes.draw do
       resources :words
     end
   end
+
+  resources :lessons do
+    resources :answers
+  end
 end
