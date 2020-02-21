@@ -11,4 +11,8 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, length: { minimum: 6 }
   mount_uploader :avatar, AvatarUploader
+
+  def taken_lesson(category)
+    lessons.find_by(category: category)
+  end
 end
