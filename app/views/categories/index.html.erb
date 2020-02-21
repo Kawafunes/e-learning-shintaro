@@ -8,8 +8,12 @@
                     <div class="card-body">
                         <h5 class="card-title"><%= category.title %></h5>
                         <p class="card-text"><%= category.description %></p>
-                        <%# <a href="answers_new" class="btn btn-primary">Start Answer</a> %>
-                        <%= button_to "Start Answer", lessons_path(category_id: category.id), class: "btn btn-primary" %>
+                        <% @lesson = current_user.taken_lesson(category) %>
+                        <% if @lesson.nil? %>
+                            <%= button_to "Start Lesson", lessons_url(category_id: category.id), class: "btn btn-primary" %>
+                        <% else %>
+                            <%= link_to "Show result", lessons_path(@lesson), class: "btn btn-primary" %>
+                        <% end %>
                     </div>
                 </div>
             </div>

@@ -3,6 +3,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new
     @lesson = Lesson.find(params[:lesson_id])
     if @lesson.next_word.nil?
+      @lesson.update(result: @lesson.lesson_results)
       redirect_to lesson_url(@lesson)
     end
   end
