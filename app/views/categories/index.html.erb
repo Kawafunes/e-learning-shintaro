@@ -9,7 +9,7 @@
                         <h5 class="card-title"><%= category.title %></h5>
                         <p class="card-text"><%= category.description %></p>
                         <%# <a href="answers_new" class="btn btn-primary">Start Answer</a> %>
-                        <%= link_to "Start Answer", answers_new_url, class: "btn btn-primary" %>
+                        <%= button_to "Start Answer", lessons_path(category_id: category.id), class: "btn btn-primary" %>
                     </div>
                 </div>
             </div>
