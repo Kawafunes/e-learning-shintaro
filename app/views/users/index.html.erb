@@ -20,7 +20,8 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="user-name"><%= user.name %></h5>
-                                    <%= link_to "Follow", "", class: "btn btn-primary" %>
+                                    <%# <%= link_to "Follow", "", class: "btn btn-primary" %>
+                                    <%= render "follow_form", user: user %>
                                 </div>
                             </div>
                         </div>
