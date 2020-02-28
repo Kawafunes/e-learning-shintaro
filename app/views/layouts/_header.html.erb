@@ -6,15 +6,13 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                <%# <%= link_to "Home", user_show, class:"navbar-brand brand" %>
             </li>
             <% if logged_in? %>
+                <li class="nav-item"><%= link_to "Dashboard", root_path , class: "nav-link" %></li>
                 <li class="nav-item"><%= link_to "Users", users_path , class: "nav-link" %></li>
                 <li class="nav-item"><%= link_to "Categories" , categories_path , class: "nav-link" %></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Account</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
                     <div class="dropdown-menu">
                         <%= link_to "Profile", current_user,class: "dropdown-item" %>
                         <%= link_to "Settings", edit_user_path(current_user), class: "dropdown-item" %>
