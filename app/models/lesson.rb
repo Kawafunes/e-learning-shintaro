@@ -1,4 +1,5 @@
 class Lesson < ApplicationRecord
+  has_one :activity, as: :action, dependent: :destroy
   belongs_to :user
   belongs_to :category
   has_many :answers
@@ -12,5 +13,4 @@ class Lesson < ApplicationRecord
   def lesson_results
     choices.where(is_correct: true).count
   end
-
 end
