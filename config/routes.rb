@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'answers/new'
-  get 'sessions/new'
   get "/signup" , to: "users#new"
 
   resources :relationships
@@ -18,6 +15,8 @@ Rails.application.routes.draw do
       # 以下のコードでwordsをcategoriesとリンクさせている
       resources :words
     end
+
+    resources :users
   end
 
   resources :lessons do

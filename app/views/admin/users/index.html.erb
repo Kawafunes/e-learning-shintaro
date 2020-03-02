@@ -1,0 +1,30 @@
+ <div class="col-md-6 offset-md-3">
+    <div class="container1">
+        <h1>Administer Users</h1>
+        <br>
+         <div class="paginate-top">
+                <%= will_paginate %>
+            </div>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Admin</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @users.each do |user| %>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.email %></td>
+                    <td><%= button_to "Add" %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <div class="paginate-under">
+                <%= will_paginate %>
+            </div>
+</div>
