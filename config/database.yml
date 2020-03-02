@@ -12,7 +12,7 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: <%= ENV.fetch("RAILS_ENV_THREAD") { 5 } %>
   username: root
   password: Shinta1221
   host: localhost
@@ -48,7 +48,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
   database: e-learning_production
-  username: e-learning
-  password: <%= ENV['E-LEARNING_DATABASE_PASSWORD'] %>
+  pool: 5
+  timeout: 5000
