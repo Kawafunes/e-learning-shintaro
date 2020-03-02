@@ -1,3 +1,26 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get 'answers/new'
+  get 'sessions/new'
+  get "/signup" , to: "users#new"
+
+  resources :relationships
+  resources :users
+  resources :categories
+  root 'static_pages#home'
+
+  get "/login", to: "sessions#new"
+  post "/login" , to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+
+  namespace :admin do
+    resources :categories do
+      # 以下のコードでwordsをcategoriesとリンクさせている
+      resources :words
+    end
+  end
+
+  resources :lessons do
+    resources :answers
+  end
 end

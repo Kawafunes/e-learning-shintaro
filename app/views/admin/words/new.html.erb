@@ -1,0 +1,36 @@
+<div class="row-edit">
+    <div class="col-md-6 offset-md-3">
+        <h1>Change Category & Word</h1>
+        <%= form_for([:admin , @category , @word]) do |f|%>
+            <%= render "shared/error_messages", object: @word %>
+            <%= f.label :word %>
+            <%= f.text_field :content, class: "form-control" %>
+
+            <%= f.label :choices %>
+            <%= f.fields_for :choices do |choice| %>
+                <%= choice.text_field :content, class: "form-control" %>
+                <%= choice.check_box :is_correct %>
+            <% end %>
+                
+            <div class="btn-2">
+                <%= f.submit "Save Word", class: "btn btn-primary" %>
+            </div>
+        <% end %>        
+    </div>
+</div>
+
+        <!-- <%= form_for(:word, url: new_admin_category_word_path) do |f| %>
+            <br>
+            <%= f.label :word %>
+            <%= f.text_field :content, class: "form-control" %>
+            <br>
+            <%= f.label :choice %>
+            <%= f.text_field :content, class: "form-control" %>
+            <br>
+             <%= f.label :choice %>
+            <%= f.text_field :content, class: "form-control" %>
+            <br>
+             <%= f.label :choice %>
+            <%= f.text_field :content, class: "form-control" %>
+            <br>
+        <% end %>

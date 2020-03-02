@@ -1,0 +1,17 @@
+<div class="container3">
+    <h1>
+    <%= @lesson.category.title %>
+    <br>
+    <%= @lesson.next_word.content %>
+    </h1>
+    <div class= "choices">
+    <% @lesson.next_word.choices.each do |choice| %>
+        <%= form_for([@lesson, @answer]) do |f| %>
+            <br>
+            <%= f.hidden_field :word_id, value: choice.word_id %>
+            <%= f.hidden_field :choice_id, value: choice.id %>
+            <%= f.submit choice.content, class: "btn btn-primary" %>
+        <% end %>
+    <% end %>
+    </div>
+</div>

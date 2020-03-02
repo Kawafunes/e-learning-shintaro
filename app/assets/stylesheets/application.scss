@@ -1,0 +1,136 @@
+@import "bootstrap";
+@import "font-awesome";
+
+.footer {
+  color: white;
+  min-height:0px;
+  bottom:0;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  // background-color: rgba($color: #0a73eb7c, $alpha: 1.0) ;
+  opacity: 80%;
+  line-height: 8px;
+  font-family: cursive;
+}
+
+.navbar {
+  font-family: cursive;
+  opacity: 80%;
+}
+
+.icon {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f007";
+}
+
+.jumbotron {
+  text-align: center;
+  position: relative;
+  margin: 0,auto;
+}
+
+.background {
+  background: url("homeimage1.jpg");
+  background-size: cover;
+  height: 665px;
+}
+
+.container {
+   text-align: center;
+   height: 50px;
+   font-family: cursive;   
+}
+
+.container3 {
+  text-align: center;
+  height: 50px;
+  font-family: cursive;
+  margin-top: 100px;
+}
+
+.Login-button {
+  padding-left: 80px;
+  padding-top: 400px;
+  text-align: center;
+  margin-right: 100px;
+}
+
+.row-login{
+  text-align: center;
+  margin-top: 80px;
+}
+
+.container1 {
+  margin-top:40px;
+  text-align: center;
+   font-family: cursive;
+}
+
+// .btn {
+//   font-size: xx-large;
+//   text-align: center;
+//   font-family: cursive;
+//   height:60px;
+//   width:400px;
+// }
+
+.btn-2 {
+  font-size: xx-large;
+  text-align: center;
+  font-family: cursive;
+  height:60px;
+  width:400px;
+  margin-top: 100px;
+  margin-left:165px;
+}
+
+.btn-3 {
+  margin-left:165px;
+}
+
+.btn-4 {
+  width: 100px;
+}
+
+.table {
+  text-align: center;
+  margin-top: 70px;
+  font-family: cursive;
+}
+
+ 
+.row-edit{
+  text-align: center;
+  margin-top: 50px;
+  padding: 0,auto;
+  font-family: cursive;
+ }
+
+.pagination {
+  margin-left: 240px;
+  margin-bottom: 50px;
+}
+
+.choices {
+  margin-top: 50px;
+}
+
+.paginate-under {
+  margin-bottom:50px;
+  margin-left: 200px;
+}
+
+.paginate-top {
+  margin-top:30px;
+  margin-left: 160px;
+}
+
+.navbar-brand {
+  margin-left: 200px;
+}
+
+.collapse {
+  margin-left: 750px;
+}
