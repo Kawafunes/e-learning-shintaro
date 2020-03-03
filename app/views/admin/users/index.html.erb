@@ -19,10 +19,16 @@
                 <tr>
                     <td><%= user.name %></td>
                     <td><%= user.email %></td>
-                    <td><%= button_to "Add" %></td>
+                    <td>
+                        <% if user.is_admin? %>
+                            <%= button_to "Remove", admin_user_path(user), method: :delete, class: "btn btn-secondary" %>
+                        <% else %>
+                            <%= button_to "Add", admin_user_path(user), method: :patch, class: "btn btn-primary" %>
+                        <% end %>
+                    </td>                        
                 </tr>
-            <% end %>
         </tbody>
+             <% end %>
     </table>
     <div class="paginate-under">
         <%= will_paginate %>

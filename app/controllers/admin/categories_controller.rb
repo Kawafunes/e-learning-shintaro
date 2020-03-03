@@ -1,4 +1,6 @@
 class Admin::CategoriesController < ApplicationController
+  before_action :check_admin
+
   def index
     @categories = Category.paginate(page: params[:page], per_page: 6)
   end
