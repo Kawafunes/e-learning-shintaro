@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'answers/new'
-  get 'sessions/new'
   get "/signup" , to: "users#new"
 
   resources :relationships
@@ -10,14 +7,16 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get "/login", to: "sessions#new"
-  post "/login" , to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  resources :sessions, only: [:create]
 
   namespace :admin do
     resources :categories do
       # 以下のコードでwordsをcategoriesとリンクさせている
       resources :words
     end
+
+    resources :users
   end
 
   resources :lessons do
