@@ -1,0 +1,27 @@
+<div class="background-category">
+    <div class="container">    
+        <%= @category.title %>
+        <%= @category.description %>
+        <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Word</th>
+                            <th scope="col">Answer</th>
+                            <th scope="col">Your Answer</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @words.each do |word| %>
+                            <tr>
+                            <td scope="row"><%= @word.content %></td>
+                            <td><%= @word.correct_answer %></td>
+                            <td></td>
+                            <td></td>
+                        <% end %>
+                    </tbody>
+                </table>
+            <% end %>
+        </div>
+    </div>
+</div> 

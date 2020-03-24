@@ -1,36 +1,32 @@
-<div class="container">
-    <%# <div class="row">
-        <div class="col-md-6 offset-md-2"> %>
-        <h1>List of Users</h1>
-            <div class="paginate-top">
-                <%= will_paginate %>
-            </div>
-                <div class="row">
-                <% @users.each do |user| %>
-                <div class="col-5 offset-1">
-                    <div class="card w-80 mb-2">
-                        <div class="row no-gutters">
-                            <div class="col-md-4">
-                                <% if user.avatar.url != nil %>
-                                    <%= image_tag user.avatar.url, class: "card-img" %>
-                                <% else %>
-                                    <%= image_tag "no_avatar.jpg", class: "card-img" %>
-                                <% end %>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="user-name"><%= user.name %></h5>
-                                    <%# <%= link_to "Follow", "", class: "btn btn-primary" %>
-                                    <%= render "follow_form", user: user %>
-                                </div>
-                            </div>
+<div class="background-users">
+    <div class="container mt-4">
+    <h1>List of Users</h1>
+        <div class="row">  
+            <% @users.each do |user| %>
+            <div class="col-5 offset-1">
+                <div class="card w-80 mb-2">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <% if user.avatar.url != nil %>
+                                <%= image_tag user.avatar.url, class: "card-img" %>
+                            <% else %>
+                                <%= image_tag "no_avatar.jpg", class: "card-img" %>
+                            <% end %>
                         </div>
-                    </div> 
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="user-name"><%= user.name %></h5>
+                            <%= render "follow_form", user: user %>
+                        </div>
+                    </div>
                 </div>
-                <% end %>
-            <div class="paginate-under">
-                <%= will_paginate %>
-            </div>
+            </div> 
+        </div>
+        <% end %>
+        <div class="paginate-under">
+            <br>
+            <br>
+            <%= will_paginate %>
         </div>
     </div>
- </div>
+</div>

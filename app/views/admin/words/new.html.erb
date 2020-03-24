@@ -1,15 +1,19 @@
 <div class="row-edit">
     <div class="col-md-6 offset-md-3">
-        <h1>Change Category & Word</h1>
+        <h1>Edit Answer & Word</h1>
         <%= form_for([:admin , @category , @word]) do |f|%>
             <%= render "shared/error_messages", object: @word %>
             <%= f.label :word %>
             <%= f.text_field :content, class: "form-control" %>
-
+            <br>
             <%= f.label :choices %>
+            <p>Please Check Answer word</p>
             <%= f.fields_for :choices do |choice| %>
+            <div class="box">
+                <%= choice.check_box :is_correct , class: "form-control" %>
+
+            </div>
                 <%= choice.text_field :content, class: "form-control" %>
-                <%= choice.check_box :is_correct %>
             <% end %>
                 
             <div class="btn-2">

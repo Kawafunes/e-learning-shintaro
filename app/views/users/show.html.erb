@@ -1,7 +1,8 @@
-<div class="All">
+<div class="background-category">
     <div class="container">
-        <div class="row mt-5">
+        <div class="row ">
             <div class="col-4">
+                <h2 class="mr-5">Profile</h2>
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <% if current_user.avatar.url != nil %>
@@ -18,12 +19,14 @@
                 </div>
                 <br>
                 <div class="card" style="width: 18rem;">
+                    <%# <% @lesson = current_user.taken_lesson(category) %>
+                    <%# <%= @lesson.count(category) %>
                     <%# <%= Method of get number of finished lesson number %>
-                    words learned
+                   0 words learned
                 </div>
             </div>
             <div class="col-8">
-                <div class="jumbotron">
+                <div class="jumbotron mt-5">
                     <h4>ACTIVITY FEED</h4>
                     <% @activities.each do |activity| %>
                         <div class="media">

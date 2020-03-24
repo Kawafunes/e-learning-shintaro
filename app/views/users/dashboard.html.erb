@@ -1,7 +1,8 @@
-<div class="All">
+<div class="background-category">
     <div class="container">
-        <div class="row mt-5">
+        <div class="row ">
             <div class="col-4">
+               <h2 class="mr-5">Dashboard</h2>
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <% if current_user.avatar.url != nil %>
@@ -11,7 +12,7 @@
                         <% end %>
                         <h5 class="card-title"><strong><%= current_user.name %></strong></h5>
                         <%= link_to "View profile", user_path(current_user), class:"btn btn-primary" %>
-                        <%= link_to "Edit profile", edit_user_path(current_user), class:"btn btn-primary" %>
+                        <%= link_to "Edit profile", edit_user_path(current_user), class:"btn btn-secondary" %>
                     </div>
                 </div>
                 <div class="relation-number" style="width: 18rem;">
@@ -19,37 +20,40 @@
                     <%= current_user.followers.count %> Followers
                 </div>
                 <br>
-                <div class="card" style="width: 18rem;">
-                    <%# <%= Method of get number of finished lesson number %>
-                    words learned
+                <div class="card" style="width: 18rem; ">
+                    <%# <% @lesson = current_user.taken_lesson(category) %>
+                    <%# <%= @lesson.count %>
+                   0 words learned
                 </div>
             </div>
             <div class="col-8">
-                <div class="jumbotron">
-                    <h4>ACTIVITY FEED</h4>
-                    <% @activities.each do |activity| %>
-                        <div class="media">
-                            <% if activity.user.avatar.url != nil %>
-                                <%= image_tag activity.user.avatar.url, class: "rounded-circle p-3", size: 100 %>
-                            <% else %>
-                                <%= image_tag "no_avatar.jpg", class: "rounded-circle p-3", size: 100 %>
-                            <% end %>
-                                <div class="media-body">
-                                <h5 class="mt-0">
-                                <%= link_to (current_user == activity.user ? "YOU" : activity.user.name), activity.user %>
-                                <% if activity.action_type == "Relationship" %>
-                                     followed <%= activity.action.followed.name %>
+                <div class="jumbotron mt-5">
+                    <span style="text-decoration: underline">
+                        <h4><i class="fas fa-book"></i>  ACTIVITY FEED</h4>
+                    </span><br>
+                        <% @activities.each do |activity| %>
+                           <span style="text-decoration: underline"> <div class="media"> </span>
+                                <% if activity.user.avatar.url != nil %>
+                                    <%= image_tag activity.user.avatar.url, class: "rounded-circle p-3", size: 100 %>
                                 <% else %>
-                                     learned <%= activity.action.result %> of <%= activity.action.words.count %> in <%= link_to activity.action.category.title,activity.action %>
+                                    <%= image_tag "no_avatar.jpg", class: "rounded-circle p-3", size: 100 %>
                                 <% end %>
-                                </h5>
-                                <small class="text-muted">
-                                <%= time_ago_in_words(activity.created_at) %>
-                                </small>
-                                </div>          
-                         </div>
-                    <% end %>
-                </div>
+                                    <div class="media-body">
+                                    <h5 class="mt-0">
+                                    <%= link_to (current_user == activity.user ? "YOU" : activity.user.name), activity.user %>
+                                    <% if activity.action_type == "Relationship" %>
+                                        followed <%= activity.action.followed.name %>
+                                    <% else %>
+                                        learned <%= activity.action.result %> of <%= activity.action.words.count %> in <%= link_to activity.action.category.title,activity.action %>
+                                    <% end %>
+                                    </h5>
+                                    <small class="text-muted">
+                                    <%= time_ago_in_words(activity.created_at) %>
+                                    </small>
+                                    </div>          
+                            </div>
+                        <% end %>
+                    </div>
             </div>
         </div>
     </div>
